@@ -92,11 +92,21 @@ public:
 };
 
 int main() {
+
 PassportUkraine passport("Ivanov", "Ivan", "Ivanovich", "02.02.1985",
 	"Kiev", "AB123456", "21.07.2020", "21.07.2050",
 	"123 Main St, Kiev", "Kiev Passport Office");
+
 passport.SetSurname("Petrenko");
-passport.GetDateOfBirth();
+passport.SetName("Petro");
+passport.SetPatronymic("Serhiyovich");
+passport.SetDateOfBirth("03.03.1990");
+passport.SetPlaceOfBirth("Odesa");
+passport.SetPassportNumber("XY987654");
+passport.SetDateOfIssue("15.03.2021");
+passport.SetDateOfExpiry("15.03.2041");
+passport.SetRegistrationAddress("789 Er St, Odesa");
+passport.SetIssuedBy("Odesa Passport Office");
 passport.Print();
 cout << endl;
 
@@ -104,6 +114,18 @@ InternationalPassportUkraine intPassport("Ivanov", "Ivan", "Ivanovich",
 	"02.02.1985", "Lviv", "CD654321", "23.05.2021", "23.05.2034",
 	"456 Elm St, Lviv", "Lviv Passport Office",
 	"Ukrainen Visa", "01.06.2022; 01.12.2022", "TR");
+
+intPassport.SetName("Andriy");
+intPassport.SetPatronymic("Vasylovich");
+intPassport.SetSurname("Shevchenko");
+intPassport.SetPassportNumber("EF789012");
+intPassport.SetDateOfIssue("15.08.2022");
+intPassport.SetDateOfExpiry("15.08.2032");
+intPassport.SetRegistrationAddress("789 Oak St, Odessa");
+intPassport.SetIssuedBy("Odessa Passport Office");
+intPassport.SetPlaceOfBirth("Odessa");
+intPassport.SetDateOfBirth("03.03.1986");
 intPassport.Print();
+
 return 0;
 }
