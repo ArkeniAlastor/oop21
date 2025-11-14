@@ -95,13 +95,15 @@ int main() {
 PassportUkraine passport("Ivanov", "Ivan", "Ivanovich", "02.02.1985",
 	"Kiev", "AB123456", "21.07.2020", "21.07.2050",
 	"123 Main St, Kiev", "Kiev Passport Office");
+passport.SetSurname("Petrenko");
+passport.GetDateOfBirth();
 passport.Print();
 cout << endl;
 
 InternationalPassportUkraine intPassport("Ivanov", "Ivan", "Ivanovich",
 	"02.02.1985", "Lviv", "CD654321", "23.05.2021", "23.05.2034",
 	"456 Elm St, Lviv", "Lviv Passport Office",
-	"Ukrainen Visa", "01.06.2022; 01.12.2022", "UA");
+	"Ukrainen Visa", "01.06.2022; 01.12.2022", "TR");
 intPassport.Print();
 return 0;
 }
