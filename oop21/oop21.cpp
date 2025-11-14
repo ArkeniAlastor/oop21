@@ -126,6 +126,5 @@ intPassport.SetIssuedBy("Odessa Passport Office");
 intPassport.SetPlaceOfBirth("Odessa");
 intPassport.SetDateOfBirth("03.03.1986");
 intPassport.Print();
-
 return 0;
 }
