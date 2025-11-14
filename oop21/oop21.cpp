@@ -60,13 +60,48 @@ public:
 	}
 };
 
+class InternationalPassportUkraine : public PassportUkraine {
+protected:
+	string visaInformation;
+	string visaExpiryDates;
+	string visacountryCodes;
+public:
+	InternationalPassportUkraine() {}
+	InternationalPassportUkraine(string s, string n, string p, string dob, string pob,
+		string pn, string doi, string doe, string ra, string ib,
+		string vi, string ved, string vcc) :
+		PassportUkraine(s, n, p, dob, pob, pn, doi, doe, ra, ib),
+		visaInformation(vi), visaExpiryDates(ved), visacountryCodes(vcc) {
+	}
+
+	void SetVisaInformation(string vi) { visaInformation = vi; }
+	string GetVisaInformation() const { return visaInformation; }
+	void SetVisaExpiryDates(string ved) { visaExpiryDates = ved; }
+	string GetVisaExpiryDates() const { return visaExpiryDates; }
+	void SetVisaCountryCodes(string vcc) { visacountryCodes = vcc; }
+	string GetVisaCountryCodes() const { return visacountryCodes; }
+
+	void Print()
+	{
+		PassportUkraine::Print();
+		cout << "Visa Information: " << visaInformation << endl;
+		cout << "Visa Expiry Dates: " << visaExpiryDates << endl;
+		cout << "Visa Country Codes: " << visacountryCodes << endl;
+	}
+
+};
+
 int main() {
+PassportUkraine passport("Ivanov", "Ivan", "Ivanovich", "02.02.1985",
+	"Kiev", "AB123456", "21.07.2020", "21.07.2050",
+	"123 Main St, Kiev", "Kiev Passport Office");
+passport.Print();
+cout << endl;
 
-	PassportUkraine passport("Ivanov", "Ivan", "Ivanovich", "01.01.1990",
-		"Kiev", "AB123456", "01.01.2020", "01.01.2030",
-		"123 Main St, Kiev", "Kiev Passport Office");
-	passport.Print();
-	return 0;
-
-
+InternationalPassportUkraine intPassport("Ivanov", "Ivan", "Ivanovich",
+	"02.02.1985", "Lviv", "CD654321", "23.05.2021", "23.05.2034",
+	"456 Elm St, Lviv", "Lviv Passport Office",
+	"Ukrainen Visa", "01.06.2022; 01.12.2022", "UA");
+intPassport.Print();
+return 0;
 }
